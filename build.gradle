@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group 'com.github.jaeukkang12'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(22)
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        name = 'papermc'
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+}
+
+dependencies {
+    implementation 'io.papermc.paper:paper-api:1.20.6-R0.1-SNAPSHOT'
+}
+
+ext {
+    set("pluginName", project.name)
+    set("className", pluginName.split("-").join("").replace("afashs","").charAt(0).toUpperCase())
+    set("packageName", project.name.replace("-","").replace("afashs",""))
+    pluginLibraries = new LinkedHashSet<String>()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    processResources {
+        filesMatching("*.yml") {
+            expand(project.properties)
+        }
+    }
+}
+
+
+jar {
+    destinationDirectory.set(file("C:/Users/rkdwo/OneDrive/바탕 화면/항붕이섭/plugins"))
+}
