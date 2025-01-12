@@ -1,0 +1,52 @@
+prefix: "&f&l[&6돈&f&l]&f "
+
+initialMoney: 1000 # 초기 자본
+
+errorMessages:
+  # 펄미션 없을 때
+  noPermission: "&c명령어를 사용할 수 있는 권한이 없습니다!"
+
+  # 보낼 대상 지정 안했을 시
+  nonTarget: "&c돈을 보낼 대상을 입력해주세요!"
+
+  # 보낼 돈 지정 안했을 시
+  nonAmount: "&c보내실 돈의 양을 입력해주세요!"
+
+  # 알 수 없는 플레이어 입력 시
+  invalidPlayer: "&c알 수 없는 플레이어입니다!"
+
+  # 보낼 돈 숫자로 입력하지 않았을 시
+  invalidAmount: "&c올바르지 않은 형식입니다!"
+
+  # 자기 자신에게 돈 보낼 시
+  samePlayer: "&c자기 자신에게 돈을 보낼 수 없습니다!"
+
+  # 보낼 돈 음수 일시
+  cannotNegative: "&c보내는 돈은 0보다 작거나 같을 수 없습니다!"
+
+
+messages:
+  money:
+    # 도움말
+    help:
+      - "&7---------- &f&l[&6도움말&f&l] &7----------"
+      - "&7/돈 확인 : &f보유 중인 돈을 확인합니다."
+      - "&7/돈 보내기 <플레이어> <돈> : &f돈을 보냅니다."
+      - "&7-----------------------------------------"
+    # 돈 확인
+    check: "&f{player} &7님은 현재 &f{money}&6G&7를 보유하고 있습니다."
+    # 보내기
+    send: "&f{target} &7님에게 &f{amount}&6G&7를 보냈습니다." # 보낸 사람한테
+    receive: "&f{player} &7님이 &f{amount}&6G&7를 보냈습니다." # 받은 사람한테
+
+    # 추가
+    add: "&f{target} &7님의 돈에 &f{amount}&6G&7를 추가했습니다."
+    added: "&f{player} &7님이 당신의 돈에 &f{amount}&6G&7를 추가했습니다."
+
+    # 제거
+    remove: "&f{target} &7님의 돈에서 &f{amount}&6G&7를 제거했습니다."
+    removed: "&f{player} &7님이 당신의 돈에서 &f{amount}&6G&7를 제거했습니다."
+
+    # 설정
+    set: "&f{target} &7님의 돈을 &f{amount}&6G&7로 설정했습니다."
+    isSet: "&f{player} &7님이 당신의 돈을 &f{amount}&6G&7로 설정했습니다."

@@ -19,17 +19,22 @@ repositories {
         name = 'papermc'
         url = 'https://repo.papermc.io/repository/maven-public/'
     }
+    maven {
+        url = 'http://jaeukkang12.kro.kr:8081/repository/maven-public/'
+        allowInsecureProtocol = true
+    }
 }
 
 dependencies {
-    implementation 'io.papermc.paper:paper-api:1.20.6-R0.1-SNAPSHOT'
+    compileOnly 'com.github.jaeukkang12:afashs-lib:1.0.2'
+    compileOnly 'io.papermc.paper:paper-api:1.20.6-R0.1-SNAPSHOT'
 }
 
 ext {
     set("pluginName", project.name)
-    set("className", pluginName.split("-").join("").replace("afashs","").charAt(0).toUpperCase())
+    name = pluginName.split("-").join("").replace("afashs", "")
+    set("className", name.substring(0, 1).toUpperCase() + name.substring(1))
     set("packageName", project.name.replace("-","").replace("afashs",""))
-    pluginLibraries = new LinkedHashSet<String>()
 }
 
 tasks.withType(JavaCompile) {
@@ -41,7 +46,29 @@ tasks.withType(JavaCompile) {
     }
 }
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            groupId = group.toString()
+            artifactId = project.name
+            version = version
+        }
+    }
+
+    repositories {
+        maven {
+            url = uri('http://localhost:8081/repository/maven-releases/')
+            allowInsecureProtocol = true
+            credentials {
+                username = "admin"
+                password = "a01076951577**"
+            }
+        }
+    }
+}
+
 
 jar {
-    destinationDirectory.set(file("C:/Users/rkdwo/OneDrive/바탕 화면/항붕이섭/plugins"))
+    destinationDirectory.set(file("C:/Users/rkdwo/OneDrive/바탕 화면/항붕섭/plugins"))
 }
