@@ -37,7 +37,7 @@ public final class Money extends JavaPlugin {
         moneyData.loadDefaultConfig();
 
         // ECONOMY
-        economy = new EconomyAPI().getEconomyManager();
+        economy = new Economy();
 
         // COMMAND
         Bukkit.getPluginCommand("돈").setExecutor(new MoneyCommand());
