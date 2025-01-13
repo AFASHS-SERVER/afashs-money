@@ -26,7 +26,7 @@ public class Economy implements EconomyImpl {
         if(!moneyData.isExist(target.getUniqueId() + "")) {
             init(target);
         }
-        return moneyData.getInt(target.getUniqueId() + "");
+        return moneyData.getDouble(target.getUniqueId() + "");
     }
 
     public String getStringMoney(Player target) {

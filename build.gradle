@@ -35,6 +35,7 @@ ext {
     name = pluginName.split("-").join("").replace("afashs", "")
     set("className", name.substring(0, 1).toUpperCase() + name.substring(1))
     set("packageName", project.name.replace("-","").replace("afashs",""))
+    set("pluginVersion", project.version)
 }
 
 tasks.withType(JavaCompile) {
