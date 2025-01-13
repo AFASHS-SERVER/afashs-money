@@ -141,10 +141,15 @@ public class MoneyCommand implements CommandExecutor {
                 return true;
             }
 
-            int amount;
+            double amount;
             try {
-                amount = Integer.parseInt(args[2]);
+                amount = Double.parseDouble(args[2]);
             } catch (NumberFormatException e) {
+                player.sendMessage(config.getMessage("errorMessages.invalidAmount"));
+                return true;
+            }
+
+            if (!NumberUtil.isNumber(amount)) {
                 player.sendMessage(config.getMessage("errorMessages.invalidAmount"));
                 return true;
             }
@@ -193,13 +198,19 @@ public class MoneyCommand implements CommandExecutor {
                 return true;
             }
 
-            int amount;
+            double amount;
             try {
-                amount = Integer.parseInt(args[2]);
+                amount = Double.parseDouble(args[2]);
             } catch (NumberFormatException e) {
                 player.sendMessage(config.getMessage("errorMessages.invalidAmount"));
                 return true;
             }
+
+            if (!NumberUtil.isNumber(amount)) {
+                player.sendMessage(config.getMessage("errorMessages.invalidAmount"));
+                return true;
+            }
+
 
             economy.removeMoney(target, amount);
 
@@ -245,13 +256,19 @@ public class MoneyCommand implements CommandExecutor {
                 return true;
             }
 
-            int amount;
+            double amount;
             try {
-                amount = Integer.parseInt(args[2]);
+                amount = Double.parseDouble(args[2]);
             } catch (NumberFormatException e) {
                 player.sendMessage(config.getMessage("errorMessages.invalidAmount"));
                 return true;
             }
+
+            if (!NumberUtil.isNumber(amount)) {
+                player.sendMessage(config.getMessage("errorMessages.invalidAmount"));
+                return true;
+            }
+
 
             economy.setMoney(target, amount);
 

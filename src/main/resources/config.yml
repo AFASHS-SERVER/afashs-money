@@ -34,19 +34,19 @@ messages:
       - "&7/돈 보내기 <플레이어> <돈> : &f돈을 보냅니다."
       - "&7-----------------------------------------"
     # 돈 확인
-    check: "&f{player} &7님은 현재 &f{money}&6G&7를 보유하고 있습니다."
+    check: "&f{player} &7님은 현재 &f{money}\uE100&7를 보유하고 있습니다."
     # 보내기
-    send: "&f{target} &7님에게 &f{amount}&6G&7를 보냈습니다." # 보낸 사람한테
-    receive: "&f{player} &7님이 &f{amount}&6G&7를 보냈습니다." # 받은 사람한테
+    send: "&f{target} &7님에게 &f{amount}\uE100&7를 보냈습니다." # 보낸 사람한테
+    receive: "&f{player} &7님이 &f{amount}\uE100&7를 보냈습니다." # 받은 사람한테
 
     # 추가
-    add: "&f{target} &7님의 돈에 &f{amount}&6G&7를 추가했습니다."
-    added: "&f{player} &7님이 당신의 돈에 &f{amount}&6G&7를 추가했습니다."
+    add: "&f{target} &7님의 돈에 &f{amount}\uE100&7를 추가했습니다."
+    added: "&f{player} &7님이 당신의 돈에 &f{amount}\uE100&7를 추가했습니다."
 
     # 제거
-    remove: "&f{target} &7님의 돈에서 &f{amount}&6G&7를 제거했습니다."
-    removed: "&f{player} &7님이 당신의 돈에서 &f{amount}&6G&7를 제거했습니다."
+    remove: "&f{target} &7님의 돈에서 &f{amount}\uE100G&7를 제거했습니다."
+    removed: "&f{player} &7님이 당신의 돈에서 &f{amount}\uE100&7를 제거했습니다."
 
     # 설정
-    set: "&f{target} &7님의 돈을 &f{amount}&6G&7로 설정했습니다."
-    isSet: "&f{player} &7님이 당신의 돈을 &f{amount}&6G&7로 설정했습니다."
+    set: "&f{target} &7님의 돈을 &f{amount}\uE100&7로 설정했습니다."
+    isSet: "&f{player} &7님이 당신의 돈을 &f{amount}\uE100&7로 설정했습니다."

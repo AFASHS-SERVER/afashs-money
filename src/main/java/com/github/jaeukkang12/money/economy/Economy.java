@@ -22,7 +22,7 @@ public class Economy implements EconomyImpl {
     }
 
     @Override
-    public int getMoney(Player target) {
+    public double getMoney(Player target) {
         if(!moneyData.isExist(target.getUniqueId() + "")) {
             init(target);
         }
@@ -34,22 +34,22 @@ public class Economy implements EconomyImpl {
     }
 
     @Override
-    public void addMoney(Player target, int i) {
-        moneyData.setInt(target.getUniqueId() + "", getMoney(target) + i);
+    public void addMoney(Player target, double i) {
+        moneyData.setDouble(target.getUniqueId() + "", getMoney(target) + i);
     }
 
     @Override
-    public void removeMoney(Player target, int i) {
-        moneyData.setInt(target.getUniqueId() + "", getMoney(target) - i);
+    public void removeMoney(Player target, double i) {
+        moneyData.setDouble(target.getUniqueId() + "", getMoney(target) - i);
     }
 
     @Override
-    public void setMoney(Player target, int i) {
-        moneyData.setInt(target.getUniqueId() + "", i);
+    public void setMoney(Player target, double i) {
+        moneyData.setDouble(target.getUniqueId() + "", i);
     }
 
     @Override
-    public void sendMoney(Player sender, Player sendTo, int i) throws NotEnoughMoneyException,NegativeMoneyException,SamePlayerException {
+    public void sendMoney(Player sender, Player sendTo, double i) throws NotEnoughMoneyException,NegativeMoneyException,SamePlayerException {
         if (getMoney(sender) < i) {
             throw new NotEnoughMoneyException();
         }
